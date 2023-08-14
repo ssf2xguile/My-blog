@@ -18,7 +18,7 @@ export const Breadcrumbs = ({ tag }: Props) => {
             </BreadcrumbItem>
             {tag && (
                 <BreadcrumbItem>
-                    <BreadcrumbLink href={`/tags/${tag.id}/page/1`} fontSize="2xl" fontWeight="bold">{tag.name}</BreadcrumbLink>
+                    <BreadcrumbLink href={`/tags/${tag.id}/page/1`} fontSize="2xl" fontWeight="bold">{tag.tag}</BreadcrumbLink>
                 </BreadcrumbItem>
             )}
         </Breadcrumb>

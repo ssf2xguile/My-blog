@@ -201,7 +201,7 @@ const options: HTMLReactParserOptions = {
             }
             if (domNode.name === 'img') {
                 return (
-                    <Image {...img.props} src={domNode.attribs.src} />
+                    <Image {...img.props} src={domNode.attribs.src} alt=""/>
                 )
             }
             if (domNode.name === 'code') {

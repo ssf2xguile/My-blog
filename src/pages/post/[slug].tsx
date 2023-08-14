@@ -36,7 +36,7 @@ export default function Article({ post }: Props) {
                     <Heading as="h1" fontSize="3xl" lineHeight={1.6}>
                         {post.title}
                     </Heading>
-                    <DateTime datetime={post.publishedAt} />
+                    <DateTime datetime={post.publishedAt ?? 'No date available'} />
                 </Stack>
                 <Divider marginY="8" />
                 {/* 記事本文 */}

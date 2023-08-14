@@ -40,7 +40,7 @@ export const PostList = ({ posts }: Props) => {
                             {post.title}
                         </Heading>
                     </Link>
-                    <DateTime datetime={post.publishedAt} />
+                    <DateTime datetime={post.publishedAt ?? 'No date available'} />
                     <Text mt="1" fontSize="xl" color="gray.500">{post.description}</Text>
                     <Link href={`/post/${post.id}`}>
                         <Button colorScheme='teal' variant='outline' size="sm" mt="8">

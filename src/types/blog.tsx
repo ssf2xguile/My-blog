@@ -1,7 +1,7 @@
 import type { MicroCMSListContent } from "microcms-js-sdk";
 
 export type PostTag = {
-    name: string
+    tag: string
 } & MicroCMSListContent
 
 export type Post = {
