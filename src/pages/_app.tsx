@@ -1,6 +1,19 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+// 必要なモジュールをインポートする
+import type { AppProps } from 'next/app'; // Next.jsのAppProps型をインポート
+import { ChakraProvider } from '@chakra-ui/react'; // Chakra UIのChakraProviderコンポーネントをインポート
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+// MyAppという関数コンポーネントを定義する
+function MyApp({ Component, pageProps }: AppProps) {
+  // MyAppコンポーネントはAppPropsという型の引数を受け取り、それを解構してComponentとpagePropsに分割代入している
+
+  // ChakraProviderコンポーネントでアプリケーション全体をラップする
+  return (
+    <ChakraProvider>
+      {/* ラップされたアプリケーションのコンポーネントを表示する */}
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
 }
+
+// MyAppコンポーネントをデフォルトエクスポートする
+export default MyApp;
