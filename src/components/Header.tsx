@@ -24,7 +24,7 @@ export const Header: FC = () => {
                     <NextLink href="/" passHref>
                         {/* 変更 ライトモードでgray.600、ダークモードでwhiteとする */}
                         <Heading as='h1' fontSize="2xl" cursor="pointer" color={useColorModeValue('gray.600', 'white')}>
-                            A.M.R's blog
+                            A.M.R&apos;s blog
                         </Heading>
                     </NextLink>
                     {/* 追加 切り替えアイコン */}
