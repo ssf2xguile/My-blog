@@ -1,6 +1,7 @@
 // 必要なモジュールをインポートする
 import type { AppProps } from 'next/app'; // Next.jsのAppProps型をインポート
 import { ChakraProvider } from '@chakra-ui/react'; // Chakra UIのChakraProviderコンポーネントをインポート
+import theme from '../libs/theme'; // Chakra UIのテーマをインポート
 
 // MyAppという関数コンポーネントを定義する
 function MyApp({ Component, pageProps }: AppProps) {
@@ -8,9 +9,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // ChakraProviderコンポーネントでアプリケーション全体をラップする
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       {/* ラップされたアプリケーションのコンポーネントを表示する */}
-      <Component {...pageProps} />
+      <Component {...pageProps}/>
     </ChakraProvider>
   );
 }

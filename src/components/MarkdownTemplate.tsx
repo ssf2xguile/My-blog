@@ -13,6 +13,7 @@ import {
 import parse, { domToReact, HTMLReactParserOptions } from 'html-react-parser';
 import highlight from 'highlight.js';
 import 'highlight.js/styles/hybrid.css'
+import { TwitterTweetEmbed } from "react-twitter-embed";
 
 type MarkdownTemplateProps = {
     source: string;
@@ -184,6 +185,23 @@ const options: HTMLReactParserOptions = {
                 return (
                     <Text {...p.props}>{domToReact(domNode.children, options)}</Text>
                 );
+            }
+            if (domNode.name === "blockquote" && domNode.attribs.class === "twitter-tweet") {
+                const tweetLink = domNode.children.find(
+                    (child: any) =>
+                        child.type === "tag" &&
+                        child.name === "a" &&
+                        child.attribs.href.includes("twitter.com")
+                );
+                if (tweetLink) {
+                    const tweetIdMatch = tweetLink.attribs.href.match(/\/status\/(\d+)/);
+                    const tweetId = tweetIdMatch ? tweetIdMatch[1] : null;
+
+                    if (tweetId) {
+                        // TwitterTweetEmbedコンポーネントを使用して埋め込み表示
+                        return <TwitterTweetEmbed tweetId={tweetId} />;
+                    }
+                }
             }
             if (domNode.name === 'blockquote') {
                 return (
