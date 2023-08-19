@@ -23,7 +23,7 @@ export default function BlogPageId({ posts, totalCount, currentPage }: Props) {
     return (
         <Box>
             <Header />
-            <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
+            <Container as="main" maxW="container.lg" marginTop="4" marginBottom="4" minHeight="100vh" display="flex" flexDirection="column">
                 <Breadcrumbs />
                 <PostList posts={posts} />
                 <Pagination totalCount={totalCount} currentPage={currentPage} />

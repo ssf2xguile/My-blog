@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Header } from "components/Header";
+import { Footer } from "components/Footer";
 import { DateTime } from "components/DateTime";
 import { MarkdownTemplate } from "components/MarkdownTemplate";
 import { TagLink } from 'components/TagLink';
@@ -24,7 +25,7 @@ export default function Article({ post }: Props) {
     return (
         <>
             <Header />
-            <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
+            <Container as="main" maxW="container.lg" marginTop="4" marginBottom="4" minHeight="100vh" display="flex" flexDirection="column">
                 <Wrap>
                     {post.tag.map(tag => (
                         <WrapItem key={tag.id}>
@@ -42,6 +43,7 @@ export default function Article({ post }: Props) {
                 {/* 記事本文 */}
                 <MarkdownTemplate source={post.text} />
             </Container >
+            <Footer />
         </>
     )
 }

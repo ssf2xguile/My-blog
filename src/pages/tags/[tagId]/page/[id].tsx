@@ -5,6 +5,7 @@ import type { Post } from "types/blog";
 import { client } from 'libs/client';
 
 import { Header } from 'components/Header';
+import { Footer } from 'components/Footer';
 import { Breadcrumbs } from 'components/Breadcrumbs';
 import { PostList } from 'components/PostList';
 import { Pagination } from 'components/Pagination';
@@ -27,11 +28,12 @@ export default function BlogTagId({ posts, totalCount, currentPage, tag }: Props
     return (
         <Box>
             <Header />
-            <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
+            <Container as="main" maxW="container.lg" marginTop="4" marginBottom="4" minHeight="100vh" display="flex" flexDirection="column">
                 <Breadcrumbs tag={tag} />
                 <PostList posts={posts} />
                 <Pagination totalCount={totalCount} currentPage={currentPage} tagId={tag.id} />
             </Container>
+            <Footer />
         </Box>
     );
 }
