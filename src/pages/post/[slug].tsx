@@ -1,8 +1,8 @@
 import { client } from "libs/client";
 import type { Post } from "types/blog";
 import type { GetStaticPaths, GetStaticProps, } from "next";
+import Head from "next/head";
 import {
-    Box,
     Container,
     Divider,
     Heading,
@@ -11,6 +11,7 @@ import {
     WrapItem,
 } from "@chakra-ui/react";
 import React from "react";
+import { MetaHead } from "components/MetaHead";
 import { Header } from "components/Header";
 import { Footer } from "components/Footer";
 import { DateTime } from "components/DateTime";
@@ -24,6 +25,7 @@ type Props = {
 export default function Article({ post }: Props) {
     return (
         <>
+            <MetaHead title={`${post.title} | A.M.R Blog`} description={post.description} />
             <Header />
             <Container as="main" maxW="container.lg" marginTop="4" marginBottom="4" minHeight="100vh" display="flex" flexDirection="column">
                 <Wrap>

@@ -3,7 +3,7 @@ import type { PostTag } from 'types/blog';
 import type { Post } from "types/blog";
 
 import { client } from 'libs/client';
-
+import { MetaHead } from 'components/MetaHead';
 import { Header } from 'components/Header';
 import { Footer } from 'components/Footer';
 import { Breadcrumbs } from 'components/Breadcrumbs';
@@ -27,6 +27,7 @@ type Props = {
 export default function BlogTagId({ posts, totalCount, currentPage, tag }: Props) {
     return (
         <Box>
+            <MetaHead />
             <Header />
             <Container as="main" maxW="container.lg" marginTop="4" marginBottom="4" minHeight="100vh" display="flex" flexDirection="column">
                 <Breadcrumbs tag={tag} />

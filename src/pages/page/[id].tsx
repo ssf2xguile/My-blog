@@ -2,8 +2,9 @@ import { Pagination } from 'components/Pagination';
 import { client } from 'libs/client';
 import { GetStaticPaths, GetStaticProps, } from "next";
 import type { Post } from "types/blog";
-import { Header } from 'components/Header'
-import { Footer } from 'components/Footer'
+import { MetaHead } from 'components/MetaHead';
+import { Header } from 'components/Header';
+import { Footer } from 'components/Footer';
 import { PostList } from 'components/PostList';
 import { Breadcrumbs } from 'components/Breadcrumbs';
 import {
@@ -22,6 +23,7 @@ type Props = {
 export default function BlogPageId({ posts, totalCount, currentPage }: Props) {
     return (
         <Box>
+            <MetaHead />
             <Header />
             <Container as="main" maxW="container.lg" marginTop="4" marginBottom="4" minHeight="100vh" display="flex" flexDirection="column">
                 <Breadcrumbs />
